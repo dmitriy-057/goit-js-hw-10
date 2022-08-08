@@ -15,20 +15,19 @@ const divEl = document.querySelector("div")
 inputEl.addEventListener('input', debounce(onHandleInputEl, DEBOUNCE_DELAY));
 
 function onHandleInputEl() {
-    const getCountries = inputEl.value.trim();
-   
-      if (!getCountries) {
-    resetMarkup();
-    
-    return ;
-  }
-
-  fetchCountries(getCountries)
-    .then(createListItem)
-    .catch(error =>
-      Notiflix.Notify.failure('Упс, страны с таким названием не существует.')
-    );
-
+  const getCountries = inputEl.value.trim();
+ 
+    if (!getCountries) {
+  
+  
+  return ;
+}
+resetMarkup();
+fetchCountries(getCountries)
+  .then(createListItem)
+  .catch(error =>
+    Notiflix.Notify.failure('Упс, страны с таким названием не существует.')
+  );
 }
 function createListItem(countries) {
     if (countries.length > 10) {
