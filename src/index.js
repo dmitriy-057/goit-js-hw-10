@@ -18,8 +18,6 @@ function onHandleInputEl() {
   const getCountries = inputEl.value.trim();
  
     if (!getCountries) {
-  
-  
   return ;
 }
 resetMarkup();
